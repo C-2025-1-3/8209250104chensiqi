@@ -1,22 +1,102 @@
 #include<iostream>
+#include<cstring>
 using namespace std;
-int main()
+void count(const char s[], int counts[])
 {
-	int a, b, c, d;
-	int gcd, lcm;
-	cout << "Please input two numbers" << endl;
-	cin >> a >> b;
-	d = a * b;
-	if (a < b) { int temp = a; a = b; b = temp; }
-	for (c = 1; c <= b; c++) {
-		if (a % c == 0 && b % c == 0) { gcd = c; }
-	}cout << "GCD:" << gcd << endl;
-	for (c = a; c <= d; c++) {
-		if (c % a == 0 && c % b == 0) {
-			lcm = c;
+	for (int i = 0; i < strlen(s); i++) {
+		switch (s[i]) {
+		case 'a':case'A':
+			counts[0]++;
+			break;
+		case 'b':case'B':
+			counts[1]++;
+			break;
+		case 'c':case'C':
+			counts[2]++;
+			break;
+		case 'd':case'D':
+			counts[3]++;
+			break;
+		case 'e':case'E':
+			counts[4]++;
+			break;
+		case 'f':case'F':
+			counts[5]++;
+			break;
+		case 'g':case'G':
+			counts[6]++;
+			break;
+		case 'h':case'H':
+			counts[7]++;
+			break;
+		case 'i':case'I':
+			counts[8]++;
+			break;
+		case 'j':case'J':
+			counts[9]++;
+			break;
+		case 'k':case'K':
+			counts[10]++;
+			break;
+		case 'l':case'L':
+			counts[11]++;
+			break;
+		case 'm':case'M':
+			counts[12]++;
+			break;
+		case 'n':case'N':
+			counts[13]++;
+			break;
+		case 'o':case'O':
+			counts[14]++;
+			break;
+		case 'p':case'P':
+			counts[15]++;
+			break;
+		case 'q':case'Q':
+			counts[16]++;
+			break;
+		case 'r':case'R':
+			counts[17]++;
+			break;
+		case 's':case'S':
+			counts[18]++;
+			break;
+		case 't':case'T':
+			counts[19]++;
+			break;
+		case 'u':case'U':
+			counts[20]++;
+			break;
+		case 'v':case'V':
+			counts[21]++;
+			break;
+		case 'w':case'W':
+			counts[22]++;
+			break;
+		case 'x':case'X':
+			counts[23]++;
+			break;
+		case 'y':case'Y':
+			counts[24]++;
+			break;
+		case 'z':case'Z':
+			counts[25]++;
 			break;
 		}
+
 	}
-	cout << "LCM:" << lcm << endl;
+}
+int main(){
+	char s1[100];
+	int counts[26] = { 0 };
+	cout << "Enter a string:" << endl;
+	cin.getline(s1, 100);
+	count(s1, counts);
+	for (int i = 0; i <26; i++) {
+		if (counts[i] != 0)
+			cout << char(int('a') + i) << ':' << counts[i] << "times" << endl;
+
+	}
 	return 0;
 }
