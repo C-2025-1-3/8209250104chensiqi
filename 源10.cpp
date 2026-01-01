@@ -1,16 +1,12 @@
 #include<iostream>
 using namespace std;
-int main()
-{
-	int i, j, k;
-	for (i = 1; i <= 5; i++) {
-		for (j = 1; j <= 5 - i; j++) {
-			cout << " ";
-		}
-		for (k = 1; k <= i; k++) {
-			cout << "*";
-		}cout << endl;
-	}
+void main() {
+	int i, j, * pi, * pj;
+	i = 5;
+	j = 7;
+	pi = &i;
+	pj = &j;
+	cout << i << '\t' << j << '\t' << pi << '\t' << pj;
+	cout << &i << '\t' << *&i << '\t' << &j<< '\t' << *&j;
 
-	return 0;
 }
